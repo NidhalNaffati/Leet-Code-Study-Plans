@@ -28,36 +28,85 @@ package day1;
  * nums is sorted in ascending order.
  */
 
+
 public class Binary_Search {
 
     public static void main(String[] args) {
-        int[] arrayOfPositiveNumbers = {
-                4,8,10,15,20,55,58,69,73,81,101,400,704,1000,2001
-        } ;
-        int target = 101 ;
+        int[] arrayOfSortedNumbers = {
+                4, 8, 10, 15, 20, 55, 58, 69, 73, 81, 101, 400, 704, 1000, 2001
+        };
+        int target = 101;
 
-        int targetPositionInTheArray=search(arrayOfPositiveNumbers,target);
 
-        System.out.println(targetPositionInTheArray);
+        System.out.println(search(arrayOfSortedNumbers, target)
+                + " : this is the resut of the iterative Search method.");
+
+        System.out.println(recursiveSearch(arrayOfSortedNumbers, target, 0, arrayOfSortedNumbers.length - 1)
+                + " : this is the resut of the recursive Search method.");
+
     }
+
+    //Binary Search Approach:
+    /*
+ Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half.
+ The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
+
+Binary Search Algorithm: The basic steps to perform Binary Search are:
+* Begin with the mid element of the whole array as a search key.
+*If the value of the search key is equal to the item then return an index of the search key.
+*Or if the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half.
+*Otherwise, narrow it to the upper half.
+*Repeatedly check from the second point until the value is found or the interval is empty.
+
+Binary Search Algorithm can be implemented in the following two ways:
+1-Iterative Method
+2-Recursive Method
+ */
+
+    /*
+     * NOTE: for better understading how to calculate the middle value check out this link
+     * https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html
+     * */
+
+    // iterative solution :
     public static int search(int[] nums, int target) {
 
-
         int start = 0;
-        int stop = nums.length - 1;
+        int end = nums.length - 1;
         int middle;
 
-
-        while (start <= stop) {
-            middle = (start + stop) / 2;
+        while (start <= end) {
+            middle = start + (end - start) / 2;
             if (nums[middle] == target)
                 return middle;
             else if (target > nums[middle])
                 start = middle + 1;
             else
-                stop = middle - 1;
+                end = middle - 1;
         }
 
         return -1;
     }
+
+    // recursevie solution :
+    public static int recursiveSearch(int[] arr, int tar, int start, int end) {
+
+        if (start > end) {
+            return -1;
+        }
+        int mid = start + (end - start) / 2;
+
+        if (arr[mid] == tar) {
+            return mid;
+        }
+
+        if (arr[mid] < tar) {
+            return recursiveSearch(arr, tar, mid + 1, end);
+        }
+
+        return recursiveSearch(arr, tar, start, mid - 1);
+
+    }
+
+
 }
