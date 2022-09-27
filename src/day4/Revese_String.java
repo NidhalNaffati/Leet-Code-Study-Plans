@@ -3,7 +3,7 @@ package day4;
 public class Revese_String {
 
     public static void main(String[] args) {
-        String str = "hello man i hope u are well ";
+        String str = "hello man i hope u are well";
 
         //converting the String str to  a char array because strings are a little difficult to handle as they are immutable
 

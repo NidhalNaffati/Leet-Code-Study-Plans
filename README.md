@@ -1,4 +1,4 @@
-### This Repository was made for peruse helping freshers getting leet code solutions with some approaches.
+### This Repository was made for perpuse helping freshers getting leet code solutions with some approaches.
 
 
 
