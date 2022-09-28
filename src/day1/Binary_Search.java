@@ -31,12 +31,17 @@ package day1;
 
 public class Binary_Search {
 
+
+    /*
+    Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Search.
+    Memory Usage: 54.9 MB, less than 14.20% of Java online submissions for Binary Search.
+     */
     public static void main(String[] args) {
         int[] arrayOfSortedNumbers = {
                 4, 8, 10, 15, 20, 55, 58, 69, 73, 81, 101, 400, 704, 1000, 2001
         };
-        int target = 101;
 
+        int target = 101;
 
         System.out.println(search(arrayOfSortedNumbers, target)
                 + " : this is the resut of the iterative Search method.");

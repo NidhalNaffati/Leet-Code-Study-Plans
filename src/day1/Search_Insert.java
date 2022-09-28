@@ -35,6 +35,10 @@ package day1;
 
 
 public class Search_Insert {
+    /*
+    Runtime: 0 ms, faster than 100.00% of Java online submissions for Search Insert Position.
+    Memory Usage: 43.3 MB, less than 58.73% of Java online submissions for Search Insert Position.
+     */
     public static void main(String[] args) {
         //test for an existing target.
         int[] arrayOfSortedNumbers =
