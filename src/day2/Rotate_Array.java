@@ -1,6 +1,6 @@
 package day2;
 
-//TODO: this is not completed yet.
+// the function works fine, but it exceeded the time complexity.
 
 public class Rotate_Array {
 
@@ -11,48 +11,33 @@ public class Rotate_Array {
             System.out.print(num + " ");
         }
         System.out.println();
-       translateArrayOneIndexToTheRight(nums,0);
-       permuteArray(nums);
 
-        for (int j = 0; j < nums.length ; j++) {
+        int k = 0;
+
+        while (k < 3) {
+            translateArrayOneIndexToTheRight(nums);
+            k++;
+        }
+
+        for (int j = 0; j < nums.length; j++) {
             System.out.print(nums[j] + " ");
         }
 
     }
 
-    public static void permuteArray(int[] nums) {
+    public static void translateArrayOneIndexToTheRight(int[] array) {
 
-        int temp;
-        temp = nums[nums.length - 1];
-
-        for (int i = 0; i < nums.length - 1; i++) {
-            int temp1 = nums[i + 1] ;
-            nums[i + 1] = nums[i];
+        int temp = array[array.length - 1];
+        int temp1 = array[0];
+        int temp2;
+        for (int i = 0; i < array.length - 1; i++) {
+            temp2 = array[i + 1];
+            array[i + 1] = temp1;
+            temp1 = temp2;
         }
 
-        nums[0] = temp;
+        array[0] = temp;
 
-
-
-
-    }
-
-    public static void rotate(int[] nums, int k) {
-
-    }
-
-
-    public static void translateArrayOneIndexToTheRight(int[] array , int indexOfStarting ){
-
-        int temp1 = array[indexOfStarting] ;
-        int temp2 ;
-        for(int i = indexOfStarting ;i<array.length -1 ;i++){
-
-            temp2 = array[i+1];
-            array[i+1]=temp1 ;
-            temp1=temp2;
-
-        }
     }
 
 }
