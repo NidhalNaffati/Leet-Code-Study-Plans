@@ -1,7 +1,6 @@
 package day2;
 
-// the function works fine, but it exceeded the time complexity.
-
+// TODO: 05/10/2022 the function works fine, but it exceeded the time complexity.
 public class Rotate_Array {
 
     public static void main(String[] args) {
